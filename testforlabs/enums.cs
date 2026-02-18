@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace testforlabs
 {
-    public class enums
+    public class enums //пока не используется
     {
         public enum menu
         {
