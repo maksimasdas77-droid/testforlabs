@@ -30,6 +30,7 @@ namespace testforlabs
                 switch (choice)
                 {
                     case 0:
+                        Console.WriteLine("завершение программы");
                         running = false;
                         break;
 
@@ -55,9 +56,6 @@ namespace testforlabs
 
                     case 3:
                         Console.Clear();
-                        //Console.Write("Введите гос. номер для удаления: ");
-                        //string delnum = Console.ReadLine();
-                        //manager.RemoveCar(delnum);
                         manager.ShowAllCars();
                         Console.Write("Введите номер автомобиля для удаления: ");
                         int delIndex = myclass.ReadValue<int>(int.TryParse);
@@ -66,19 +64,6 @@ namespace testforlabs
 
                     case 4:
                         Console.Clear();
-                        //Console.Write("Введите гос. номер для изменения: ");
-                        //string oldnum = Console.ReadLine();
-
-                        //Console.Write("Введите новое название авто: ");
-                        //string newname = Console.ReadLine();
-
-                        //Console.Write("Введите новый гос. номер: ");
-                        //string newnumber = Console.ReadLine();
-
-                        //Console.Write("Введите нового владельца: ");
-                        //string newowner = Console.ReadLine();
-
-                        //manager.UpdateCar(oldnum, new caritem(newname, newnumber, newowner));
                         manager.ShowAllCars();
                         Console.Write("Введите номер автомобиля для изменения: ");
                         int updIndex = myclass.ReadValue<int>(int.TryParse);
