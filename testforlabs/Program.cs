@@ -57,6 +57,12 @@ namespace testforlabs
                     case 3:
                         Console.Clear();
                         manager.ShowAllCars();
+                        if (manager.IsEmpty())
+                        {
+                            //Console.WriteLine("Список пуст.");
+                            Console.ReadLine();
+                            break;
+                        }
                         Console.Write("Введите номер автомобиля для удаления: ");
                         int delIndex = myclass.ReadValue<int>(int.TryParse);
                         manager.RemoveCarByIndex(delIndex);
@@ -65,6 +71,13 @@ namespace testforlabs
                     case 4:
                         Console.Clear();
                         manager.ShowAllCars();
+                        if (manager.IsEmpty())
+                        {
+                            //Console.WriteLine("Список пуст.");
+                            Console.ReadLine();
+                            break;
+                        }
+
                         Console.Write("Введите номер автомобиля для изменения: ");
                         int updIndex = myclass.ReadValue<int>(int.TryParse);
                         Console.Write("Введите новое название авто: ");

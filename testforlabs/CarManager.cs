@@ -42,9 +42,9 @@ namespace testforlabs
                 index++;
             }
         }
-        public caritem? GetCarByIndex(int index)
+        public caritem? GetCarByIndex(int index) //проверить на актуальность этот метод
         {
-            if (index < 1 || index >= cars.Count)
+            if (index < 1 || index > cars.Count)
             return null;
             return cars[index - 1];
         }
@@ -55,14 +55,19 @@ namespace testforlabs
         }
         public void UpdateByIndex(int index, caritem newCar)
         {
-            //if (!cars)
-            //{     надо доделать эту часть, проверка на существование списка для изменения
-            //    Console.WriteLine("список пуст");
-            //    return;
-            ////}
-            if (index < 1 || index > cars.Count) return;
+            if (!cars.Any())
+            {
+                Console.WriteLine("список пуст");
+                return;
+            }
+                if (index < 1 || index > cars.Count) return;
             cars[index -1] = newCar;
         }
+        public bool IsEmpty() //для проверки на наличие списка в мейне
+        {
+            return !cars.Any();
+        }
+
 
     }
 
