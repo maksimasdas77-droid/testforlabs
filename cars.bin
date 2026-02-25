@@ -2,46 +2,29 @@
   {
     "carname": "1",
     "carnumber": "1",
-    "carowner": "1"
+    "carowner": "1",
+    "CreatedAt": "2026-02-25T22:28:26.522841+03:00",
+    "UpdateAt": "2026-02-25T22:28:26.5385396+03:00"
   },
   {
     "carname": "2",
     "carnumber": "2",
-    "carowner": "2"
+    "carowner": "2",
+    "CreatedAt": "2026-02-25T22:28:28.3024688+03:00",
+    "UpdateAt": "2026-02-25T22:28:44.831835+03:00"
   },
   {
     "carname": "3",
     "carnumber": "3",
-    "carowner": "3"
+    "carowner": "3",
+    "CreatedAt": "2026-02-25T22:28:52.574428+03:00",
+    "UpdateAt": "2026-02-25T22:28:52.574428+03:00"
   },
   {
     "carname": "4",
     "carnumber": "4",
-    "carowner": "4"
-  },
-  {
-    "carname": "5",
-    "carnumber": "5",
-    "carowner": "5"
-  },
-  {
-    "carname": "6",
-    "carnumber": "6",
-    "carowner": "6"
-  },
-  {
-    "carname": "7",
-    "carnumber": "7",
-    "carowner": "7"
-  },
-  {
-    "carname": "8",
-    "carnumber": "8",
-    "carowner": "8"
-  },
-  {
-    "carname": "9",
-    "carnumber": "9",
-    "carowner": "9"
+    "carowner": "4",
+    "CreatedAt": "2026-02-25T22:28:54.4170512+03:00",
+    "UpdateAt": "2026-02-25T22:31:02.8111542+03:00"
   }
 ]

@@ -87,6 +87,8 @@ namespace testforlabs
                 return;
             }
                 if (index < 1 || index > cars.Count) return;
+                newCar.CreatedAt = cars[index -1].CreatedAt;
+                newCar.UpdateAt = DateTime.Now;
             cars[index -1] = newCar;
         }
         public bool IsEmpty() //для проверки на наличие списка в мейне
