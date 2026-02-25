@@ -75,6 +75,10 @@ namespace testforlabs
                         string newowner = Console.ReadLine();
                         manager.UpdateByIndex(updIndex, new caritem(newname, newnumber, newowner));
                         break;
+                    default:
+                        Console.WriteLine("Не правильный пункт меню.");
+                        Console.ReadLine();
+                        break;
                 }
             }
         }

@@ -13,14 +13,14 @@ namespace testforlabs
             cars.Add(car);
         }
 
-        public void RemoveCar(string number)
+        public void RemoveCar(string number) //метод сейчас не используется, переписано все по индексам
         {
             cars.RemoveAll(c => c.carnumber == number);
         }
 
         public void UpdateCar(string number, caritem newCar)
         {
-            int index = cars.FindIndex(c => c.carnumber == number);
+            int index = cars.FindIndex(c => c.carnumber == number); //мето не используется, пеерешли на индексы
             if (index != -1)
                 cars[index] = newCar;
         }
@@ -55,6 +55,11 @@ namespace testforlabs
         }
         public void UpdateByIndex(int index, caritem newCar)
         {
+            //if (!cars)
+            //{     надо доделать эту часть, проверка на существование списка для изменения
+            //    Console.WriteLine("список пуст");
+            //    return;
+            ////}
             if (index < 1 || index > cars.Count) return;
             cars[index -1] = newCar;
         }
