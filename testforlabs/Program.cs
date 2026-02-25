@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Text;
+using testforlabs.Utills;
 
 namespace testforlabs
 {
@@ -17,15 +18,9 @@ namespace testforlabs
             bool running = true;
             while (running)
             {
-                Console.Clear();
-                Console.WriteLine("1. Показать автомобили");
-                Console.WriteLine("2. Добавить автомобиль");
-                Console.WriteLine("3. Удалить автомобиль");
-                Console.WriteLine("4. Изменить автомобиль");
-                Console.WriteLine("0. Выход");
-                Console.Write("Выберите пункт: ");
+                Menu.ShowMenu();
 
-                int choice = myclass.ReadValue<int>(int.TryParse);
+                int choice = readclas.ReadValue<int>(int.TryParse);
 
                 switch (choice)
                 {
@@ -42,16 +37,8 @@ namespace testforlabs
 
                     case 2:
                         Console.Clear();
-                        Console.Write("Введите наименование авто: ");
-                        string name = Console.ReadLine();
-
-                        Console.Write("Введите гос. номер: ");
-                        string number = Console.ReadLine();
-
-                        Console.Write("Введите владельца: ");
-                        string owner = Console.ReadLine();
-
-                        manager.AddCar(new caritem(name, number, owner));
+                        caritem newCar = Utills.Utills.CarInput();
+                        manager.AddCar(newCar);
                         break;
 
                     case 3:
@@ -64,7 +51,7 @@ namespace testforlabs
                             break;
                         }
                         Console.Write("Введите номер автомобиля для удаления: ");
-                        int delIndex = myclass.ReadValue<int>(int.TryParse);
+                        int delIndex = readclas.ReadValue<int>(int.TryParse);
                         manager.RemoveCarByIndex(delIndex);
                         break;
 
@@ -79,15 +66,23 @@ namespace testforlabs
                         }
 
                         Console.Write("Введите номер автомобиля для изменения: ");
-                        int updIndex = myclass.ReadValue<int>(int.TryParse);
-                        Console.Write("Введите новое название авто: ");
-                        string newname = Console.ReadLine();
-                        Console.Write("Введите новый гос. номер: ");
-                        string newnumber = Console.ReadLine();
-                        Console.Write("Введите нового владельца: ");
-                        string newowner = Console.ReadLine();
-                        manager.UpdateByIndex(updIndex, new caritem(newname, newnumber, newowner));
+                        int updIndex = readclas.ReadValue<int>(int.TryParse);
+                        newCar = Utills.Utills.CarInput();
+                        manager.UpdateByIndex(updIndex, newCar);
                         break;
+
+                        case 5:
+                        Console.Clear();
+                        manager.SaveToFile();
+                        Console.ReadLine();
+                        break;
+
+                        case 6:
+                        Console.Clear();
+                        manager.LoadFromFile();
+                        Console.ReadLine();
+                        break;
+
                     default:
                         Console.WriteLine("Не правильный пункт меню.");
                         Console.ReadLine();

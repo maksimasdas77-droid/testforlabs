@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace testforlabs
 {
-    public class myclass
+    public class readclas
     {
         public delegate bool UniTryParse<T>(string input, out T value); //дженерик для readvalue<T>
         public static T ReadValue<T>(string message, UniTryParse<T> parser) //самый универсальный метод ввода и безопасный на данный момент который я знаю

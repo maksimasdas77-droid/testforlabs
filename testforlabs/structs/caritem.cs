@@ -2,6 +2,7 @@
 
 namespace testforlabs
 {
+    [Serializable] //обозначение для сериализатора что можно данные записывать по байтам
     public struct caritem
     {
         public string carname;

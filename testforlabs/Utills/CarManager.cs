@@ -1,12 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using Newtonsoft.Json;
 
 namespace testforlabs
 {
     internal class CarManager
     {
         private List<caritem> cars = new List<caritem>();
+
+        private const string FileName = @"D:\projekts\testforlabs\cars.bin"; //объявление абсолютного пути к файлу
+
+        //части кода для записи и чтения бинарного файла
+
+        public void SaveToFile() //запись в файл
+        {
+            string json = JsonConvert.SerializeObject(cars, Formatting.Indented);
+            File.WriteAllText(FileName, json);
+            Console.WriteLine("Данные успешно сохранены.");
+        }
+
+        public void LoadFromFile()
+        {
+            if (!File.Exists(FileName))
+            {
+                Console.WriteLine("Файл не найден");
+                return;
+            }
+            string json = File.ReadAllText(FileName);
+            cars = JsonConvert.DeserializeObject<List<caritem>>(json);
+            Console.WriteLine("Данные успешно загружены.");
+        }
 
         public void AddCar(caritem car)
         {
@@ -67,6 +93,7 @@ namespace testforlabs
         {
             return !cars.Any();
         }
+        
 
 
     }
